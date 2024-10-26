@@ -13,7 +13,7 @@ const productRoutes = require('./routes/productRoutes'); // Product routes
 const app = express();
 
 // Connect to MongoDB
-mongoose.connect('mongodb://localhost:27017/DemoDB', {
+mongoose.connect('mongodb+srv://codelangsaurangabad:EtSRU9oUHT5v8YXa@cluster0.9ph8g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });
