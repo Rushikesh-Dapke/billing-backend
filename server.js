@@ -9,6 +9,8 @@ const productRoutes = require('./routes/productRoutes'); // Product routes
 
 
 // Add more route imports as needed
+const cors = require('cors');
+
 
 const app = express();
 
@@ -18,6 +20,17 @@ mongoose.connect('mongodb+srv://codelangsaurangabad:EtSRU9oUHT5v8YXa@cluster0.9p
     useUnifiedTopology: true,
   });
 connectDB();
+
+// Use CORS
+app.use(cors());
+
+// Optionally, configure CORS with specific options
+app.use(cors({
+  origin: 'http://localhost:4200', // Allow only Angular app's origin
+  methods: 'GET,POST,PUT,DELETE', // Specify allowed methods
+  credentials: true // Allow credentials (e.g., cookies, authorization headers)
+}));
+
 
 // Middleware
 app.use(express.json()); // Parse JSON requests
